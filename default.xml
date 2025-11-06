@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <manifest>
   <remote name="aosp" fetch="https://android.googlesource.com" review="https://android-review.googlesource.com/" />
-  <remote name="a02-trial" fetch="https://github.com/a02-trial" revision="mt6739" />
+  <remote name="a02-trial" fetch="https://github.com/a02-trial" revision="common" />
 
   <default revision="android-11.0.0_r0.100" remote="aosp" sync-j="4" />
 
   <project path="mt6739" name="a022f_kernel" clone-depth="1" remote="a02-trial" />
-  <project path="AnyKernel3" name="AnyKernel3" remote="a02-trial" revision="mt6739" />
+  <project path="AnyKernel3" name="AnyKernel3" remote="a02-trial" revision="common" />
   
   <project path="common-superproject" name="kernel/superproject" revision="android-hikey-linaro-4.14" />
   <project path="prebuilts-master/clang/host/linux-x86" name="platform/prebuilts/clang/host/linux-x86" clone-depth="1" revision="android11-release" />
