@@ -1,22 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <manifest>
-  <remote name="aosp" fetch="https://android.googlesource.com" review="https://android-review.googlesource.com/" />
-  <remote name="carlodandan" fetch="https://github.com/carlodandan" revision="A14" />
-
-  <default revision="master-kernel-build-2021" remote="aosp" sync-j="4" />
-
-  <project path="sm6375" name="android_kernel_samsung_sm6375" clone-depth="1" remote="carlodandan" />
-  
-  <project path="build" name="kernel/build" />
-  <project path="hikey-modules" name="kernel/hikey-modules" revision="android-5.4" />
-  <project path="kernel/tests" name="kernel/tests" />
-  <project path="kernel/configs" name="kernel/configs" />
-  <project path="common-modules/virtual-device" name="kernel/common-modules/virtual-device" revision="android11-5.4" />
-  <project path="prebuilts/gcc/linux-x86/aarch64/aarch64-linux-android-4.9" name="platform/prebuilts/gcc/linux-x86/aarch64/aarch64-linux-android-4.9" clone-depth="1" />
-  <project path="prebuilts/gcc/linux-x86/arm/arm-linux-androideabi-4.9" name="platform/prebuilts/gcc/linux-x86/arm/arm-linux-androideabi-4.9" clone-depth="1" />
-  <project path="prebuilts/gcc/linux-x86/x86/x86_64-linux-android-4.9" name="platform/prebuilts/gcc/linux-x86/x86/x86_64-linux-android-4.9" clone-depth="1" />
-  <project path="prebuilts-master/clang/host/linux-x86" name="platform/prebuilts/clang/host/linux-x86" clone-depth="1" />
-  <project path="prebuilts/build-tools" name="platform/prebuilts/build-tools" clone-depth="1" />
-  <project path="prebuilts/kernel-build-tools" name="kernel/prebuilts/build-tools" clone-depth="1" />
-  <project path="tools/mkbootimg" name="platform/system/tools/mkbootimg" />
+  <remote  name="aosp"
+    fetch="https://android.googlesource.com/" />
+  <default revision="android-msm-sunfish-4.14-android11"
+    remote="aosp" sync-j="4" />
+  <project path="build" name="kernel/build" revision="f4f2d2f0665c6031f67d8c84ff98b7d22d5abac1" />
+  <project path="private/msm-google" name="kernel/msm" >
+    <linkfile src="build.config.no-cfi" dest="build.config" />
+  </project>
+  <project path="private/msm-google/techpack/audio" name="kernel/msm-extra" />
+  <project path="private/msm-google-modules/data-kernel" name="kernel/msm-modules/data-kernel" />
+  <project path="private/msm-google-modules/wlan/qca-wifi-host-cmn" name="kernel/msm-modules/qca-wfi-host-cmn" />
+  <project path="private/msm-google-modules/wlan/qcacld-3.0" name="kernel/msm-modules/qcacld" />
+  <project path="private/msm-google-modules/wlan/fw-api" name="kernel/msm-modules/wlan-fw-api" />
+  <project path="private/msm-google-modules/touch/fts" name="kernel/msm-modules/fts_touch" />
+  <project path="prebuilts/gcc/linux-x86/aarch64/aarch64-linux-android-4.9" name="platform/prebuilts/gcc/linux-x86/aarch64/aarch64-linux-android-4.9" revision="android11-release" clone-depth="1" />
+  <project path="prebuilts/gcc/linux-x86/arm/arm-linux-androideabi-4.9" name="platform/prebuilts/gcc/linux-x86/arm/arm-linux-androideabi-4.9" revision="android11-release" clone-depth="1" />
+  <project path="prebuilts-master/clang/host/linux-x86" name="platform/prebuilts/clang/host/linux-x86" revision="f71cc7fa68ac644595257d6fdebc2e543cb7041c" clone-depth="1" groups="partner" />
+  <project path="prebuilts-master/misc" name="platform/prebuilts/misc" revision="android11-release" clone-depth="1" />
 </manifest>
