@@ -1,9 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <manifest>
-  <remote  name="aosp"
-    fetch="https://android.googlesource.com/" />
-  <default revision="android-msm-sunfish-4.14-android11"
-    remote="aosp" sync-j="4" />
+  <remote name="aosp" fetch="https://android.googlesource.com" review="https://android-review.googlesource.com/" />
+  <remote name="a02-trial" fetch="https://github.com/a02-trial"  revision="a022f_kernel" />
+
+  <default revision="android-msm-sunfish-4.14-android11" remote="aosp" sync-j="4" />
+
+  <project path="mt6739" name="android_kernel-manifest" clone-depth="1" remote="a02-trial" />
+  
   <project path="build" name="kernel/build" revision="f4f2d2f0665c6031f67d8c84ff98b7d22d5abac1" />
   <project path="private/msm-google" name="kernel/msm" >
     <linkfile src="build.config.no-cfi" dest="build.config" />
