@@ -7,7 +7,7 @@
 
   <project path="mt6739" name="a022f_kernel" clone-depth="1" remote="a02-trial" />
     <linkfile dest="build.config" src="build.config.mt6739" />
-  </project>
+  
   <project path="common-modules/virtual-device" name="kernel/common-modules/virtual-device" revision="android-4.19-stable" />
   <project path="build" name="kernel/build" remote="aosp" />
   <project path="kernel/tests" name="kernel/tests" remote="aosp" />
