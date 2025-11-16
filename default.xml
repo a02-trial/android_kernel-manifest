@@ -1,23 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <manifest>
   <remote name="aosp" fetch="https://android.googlesource.com" review="https://android-review.googlesource.com/" />
-  <remote name="a02-trial" fetch="https://github.com/a02-trial" revision="mt6739" />
+  <remote name="carlodandan" fetch="https://github.com/carlodandan" revision="lineage-21" />
 
-  <default revision="android-11.0.0_r0.100" remote="aosp" sync-j="4" />
+  <default revision="master-kernel-build-2021" remote="aosp" sync-j="4" />
 
-  <project path="mt6739" name="a022f_kernel" clone-depth="1" remote="a02-trial" />
-  <project path="AnyKernel3" name="AnyKernel3" remote="a02-trial" revision="mt6739" />
+  <project path="sm6225" name="android_kernel_realme_sm6225" clone-depth="1" remote="carlodandan" />
   
-  <project path="common-superproject" name="kernel/superproject" revision="android-hikey-linaro-4.14" />
-  <project path="prebuilts-master/clang/host/linux-x86" name="platform/prebuilts/clang/host/linux-x86" clone-depth="1" revision="android11-release" />
+  <project path="AnyKernel3" name="AnyKernel3" remote="carlodandan" revision="sm6225" />
   
   <project path="build" name="kernel/build" remote="aosp" />
   <project path="kernel/tests" name="kernel/tests" remote="aosp" />
   <project path="kernel/configs" name="kernel/configs" remote="aosp" />
+  <project path="common-modules/virtual-device" name="kernel/common-modules/virtual-device" revision="android-4.19-stable" />
+  <project path="prebuilts-master/clang/host/linux-x86" name="platform/prebuilts/clang/host/linux-x86" clone-depth="1" revision="android13-release" />
   <project path="prebuilts/gas/linux-x86" name="platform/prebuilts/gas/linux-x86" clone-depth="1" remote="aosp" />
   <project path="prebuilts/build-tools" name="platform/prebuilts/build-tools" clone-depth="1" remote="aosp" />
   <project path="prebuilts/kernel-build-tools" name="kernel/prebuilts/build-tools" clone-depth="1" remote="aosp" />
   <project path="tools/mkbootimg" name="platform/system/tools/mkbootimg" remote="aosp" />
-  
-  
 </manifest>
