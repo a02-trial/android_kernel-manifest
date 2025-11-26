@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <manifest>
   <remote  name="aosp" fetch="https://android.googlesource.com/" review="https://android-review.googlesource.com/" />
-  <remote name="a02-trial" fetch="https://github.com/a02-trial" revision="kernelku" />
+  <remote name="rdbckp" fetch="https://github.com/rdbckp" revision="kernelku" />
   
   <default revision="master-kernel-build-2021" remote="aosp" sync-j="4" />
 
-  <project path="mt6739" name="BR_kernel_a02" clone-depth="1" remote="a02-trial" />
+  <project path="mt6739" name="kernel_a02" clone-depth="1" remote="rdbckp" />
   
   <project path="build" name="kernel/build" remote="aosp" />
   <project path="kernel/tests" name="kernel/tests" remote="aosp" />
